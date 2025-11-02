@@ -1,13 +1,13 @@
 --[[----------------------------------------------------------------------------
 
-Lightroom Tree Exporter - Export Service Provider
+Crop & Roll Tree Exporter - Export Service Provider
 
 A Lightroom Classic plugin that preserves folder structure during export.
 This module handles the main export logic, UI generation, and photo processing.
 
 Author: Wouter Vellekoop
 License: MIT
-Repository: https://github.com/woutervellekoop/lightroom-tree-exporter
+Repository: https://github.com/woutervellekooppixel/lightroom-tree-exporter
 
 Features:
 - Folder structure preservation
@@ -83,7 +83,7 @@ function CropAndRollServiceProvider.sectionsForTopOfDialog(viewFactory, property
 	
 	return {
 		{
-			title = "Tree Exporter Settings",
+			title = "Crop & Roll Settings",
 			synopsis = "Configure folder structure preservation and export options",
 			
 			viewFactory:column {

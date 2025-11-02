@@ -1,8 +1,6 @@
-# Lightroom Tree Exporter# Crop and Roll Tree Exporter - Lightroom Plugin
+# Crop & Roll Tree Exporter
 
-
-
-A free, open-source Adobe Lightroom Classic plugin that preserves your folder structure when exporting photos. Perfect for photographers who want to maintain their organizational hierarchy across different export destinations.🎯 **A stylish and efficient Adobe Lightroom plugin that preserves your original folder structure when exporting photos with flair.**
+🎯 **A stylish and efficient Adobe Lightroom plugin that preserves your original folder structure when exporting photos with flair.**
 
 
 
@@ -44,7 +42,7 @@ A free, open-source Adobe Lightroom Classic plugin that preserves your folder st
 
 
 
-1. **Download** the latest release from [GitHub Releases](https://github.com/woutervellekoop/lightroom-tree-exporter/releases)1. **Select photos** you want to export in Lightroom
+1. **Download** the latest release from [GitHub Releases](https://github.com/woutervellekooppixel/lightroom-tree-exporter/releases)
 
 2. **Extract** the `.zip` file to get the `.lrplugin` folder2. Go to **File > Export**
 
@@ -167,7 +165,7 @@ We welcome contributions! Here's how you can help:
 ### Development Setup
 
 ```bash
-git clone https://github.com/woutervellekoop/lightroom-tree-exporter.git
+git clone https://github.com/woutervellekooppixel/lightroom-tree-exporter.git
 cd lightroom-tree-exporter
 # Open the .lrplugin folder in your code editor
 # Install in Lightroom Classic for testing
@@ -185,8 +183,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/woutervellekoop/lightroom-tree-exporter/issues)
-- **Discussions**: [Community discussions and questions](https://github.com/woutervellekoop/lightroom-tree-exporter/discussions)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/woutervellekooppixel/lightroom-tree-exporter/issues)
+- **Discussions**: [Community discussions and questions](https://github.com/woutervellekooppixel/lightroom-tree-exporter/discussions)
 
 ---
 

@@ -1,6 +1,6 @@
 --[[----------------------------------------------------------------------------
 
-Lightroom Tree Exporter - Open Source Plugin
+Crop & Roll Tree Exporter - Open Source Plugin
 
 A Lightroom Classic plugin that preserves folder structure during export,
 allowing photographers to maintain their organizational hierarchy when
@@ -9,7 +9,7 @@ exporting photos to external destinations.
 Author: Wouter Vellekoop
 Version: 1.0.0
 License: MIT
-Repository: https://github.com/woutervellekoop/lightroom-tree-exporter
+Repository: https://github.com/woutervellekooppixel/lightroom-tree-exporter
 
 ------------------------------------------------------------------------------]]
 
@@ -19,8 +19,8 @@ return {
 	LrSdkMinimumVersion = 10.0,
 	
 	-- Plugin Identification
-	LrToolkitIdentifier = "com.woutervellekoop.lightroom.treeexporter",
-	LrPluginName = "Lightroom Tree Exporter",
+	LrToolkitIdentifier = "com.cropandroll.lightroom.treeexporter",
+	LrPluginName = "Crop & Roll Tree Exporter",
 	LrPluginInfoProvider = "CropAndRollInfoProvider.lua",
 	
 	-- Plugin Version
@@ -31,30 +31,30 @@ return {
 	
 	-- Export Service
 	LrExportServiceProvider = {
-		title = "Tree Exporter",
+		title = "Crop & Roll Tree Exporter",
 		file = "CropAndRollServiceProvider.lua",
 	},
 	
 	-- Metadata
-	LrPluginInfoUrl = "https://github.com/woutervellekoop/lightroom-tree-exporter",
+	LrPluginInfoUrl = "https://github.com/woutervellekooppixel/lightroom-tree-exporter",
 	
 	-- Help Menu
 	LrHelpMenuItems = {
 		{
-			title = "Tree Exporter Help",
+			title = "Crop & Roll Tree Exporter Help",
 			file = "CropAndRollHelp.lua",
 		},
 	},
 	
 	-- Plugin Info
 	LrPluginInfo = {
-		title = "Lightroom Tree Exporter",
+		title = "Crop & Roll Tree Exporter",
 		summary = "Preserve folder structure when exporting photos",
 		description = "An open source plugin that maintains your original folder hierarchy during photo exports, with real-time preview and flexible subfolder options.",
 		author = "Wouter Vellekoop",
 		version = "1.0.0",
 		license = "MIT",
-		homepage = "https://github.com/woutervellekoop/lightroom-tree-exporter"
+		homepage = "https://github.com/woutervellekooppixel/lightroom-tree-exporter"
 	},
 	
 }

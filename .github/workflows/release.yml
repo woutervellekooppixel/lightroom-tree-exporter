@@ -1,0 +1,73 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Get version from tag
+      id: get_version
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_OUTPUT
+      
+    - name: Create plugin package
+      run: |
+        # Create clean plugin directory
+        mkdir -p LightroomTreeExporter.lrplugin
+        
+        # Copy essential files
+        cp *.lua LightroomTreeExporter.lrplugin/
+        cp LICENSE LightroomTreeExporter.lrplugin/
+        cp README.md LightroomTreeExporter.lrplugin/
+        cp CHANGELOG.md LightroomTreeExporter.lrplugin/
+        
+        # Remove development files
+        rm -f LightroomTreeExporter.lrplugin/*_old.lua
+        rm -f LightroomTreeExporter.lrplugin/*_backup*.lua
+        rm -f LightroomTreeExporter.lrplugin/SimpleTest.lua
+        
+        # Create zip archive
+        zip -r LightroomTreeExporter_v${{ steps.get_version.outputs.VERSION }}.zip LightroomTreeExporter.lrplugin
+        
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Lightroom Tree Exporter v${{ steps.get_version.outputs.VERSION }}
+        body: |
+          ## 🎉 New Release: v${{ steps.get_version.outputs.VERSION }}
+          
+          ### 📦 Installation
+          1. Download the `LightroomTreeExporter_v${{ steps.get_version.outputs.VERSION }}.zip` file below
+          2. Extract the zip to get the `.lrplugin` folder
+          3. Install in Lightroom Classic via File > Plug-in Manager > Add
+          
+          ### 📋 Changes
+          See [CHANGELOG.md](https://github.com/woutervellekoop/lightroom-tree-exporter/blob/main/CHANGELOG.md) for detailed changes.
+          
+          ### 💬 Support
+          - [GitHub Issues](https://github.com/woutervellekoop/lightroom-tree-exporter/issues) for bug reports
+          - [Discussions](https://github.com/woutervellekoop/lightroom-tree-exporter/discussions) for questions
+          
+          **Compatibility**: Adobe Lightroom Classic 10.0+
+        draft: false
+        prerelease: false
+        
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./LightroomTreeExporter_v${{ steps.get_version.outputs.VERSION }}.zip
+        asset_name: LightroomTreeExporter_v${{ steps.get_version.outputs.VERSION }}.zip
+        asset_content_type: application/zip
